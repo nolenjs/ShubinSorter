@@ -1,16 +1,22 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-import { AppComponent } from './app.component';
+import { SortClass } from './app.component';
+import {MaterialModule} from './material.module';
+import {MatIconModule} from '@angular/material/icon';
+import {NgxPaginationModule} from 'ngx-pagination';
 
 @NgModule({
   declarations: [
-    AppComponent
+    SortClass
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    MaterialModule,
+    MatIconModule,
+    NgxPaginationModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [SortClass]
 })
 export class AppModule { }
