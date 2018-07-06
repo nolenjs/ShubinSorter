@@ -66,8 +66,6 @@ export class SortClass {
   applySort(sort){
     let unO = this.invoices;
     let that = this;
-    //For debugging purposes (see if im in an infinite loop
-    let count = 0;
 
     if (sort === "crush")
       this.invoices = replace(that._crush);
@@ -82,10 +80,12 @@ export class SortClass {
     if (sort === "num")
       this.invoices = replace(that._num);
 
+    /*For debugging purposes (see if im in an infinite loop)*/let count = 0;
     function replace(sA, i?, temp?, checkpoint?){
       i = i ? i : 0;
       temp = temp ? temp : unO[sA[i].oi];
       let compare = that.createCompareVar(sA, temp[i]);
+      /*For debugging purposes (see if im in an infinite loop)*/
       if (count > sA.length) {
         console.log("ERROR!! Count(", count, ") > sA(", sA.length, ")");
         return;
